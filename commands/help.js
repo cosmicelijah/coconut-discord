@@ -3,7 +3,7 @@ const { Channel } = require("discord.js");
 module.exports = {
     name: 'help',
     description: "list of available commands",
-    execute(message, args, Discord){
+    execute(client, message, args, Discord){
         let helpEmbed = new Discord.MessageEmbed()
             .setColor('#FAF0E6')
             .setAuthor('Helpful Coconut here,')

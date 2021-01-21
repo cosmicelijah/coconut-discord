@@ -1,7 +1,7 @@
 module.exports = {
     name: 'ping',
     description: "ye olde ping commande",
-    execute(message, args, Discord){
+    execute(client, message, args, Discord){
         let pingEmbed = new Discord.MessageEmbed()
             .setColor('#bada55')
             .setTitle('Huh???')
