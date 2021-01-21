@@ -13,5 +13,5 @@ module.exports = {
             .setImage('http://getwallpapers.com/wallpaper/full/7/f/6/553679.jpg')
             .setFooter('This test was successful');
         message.channel.send(newEmbed);
-    } 
+    }
 }
