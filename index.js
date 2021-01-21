@@ -17,14 +17,17 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Coconut is ready to go!');
+});
+
+client.on("ready", () =>{
     client.user.setPresence({
-        status: "online",
+        status: "online",  //You can show online, idle....
         game: {
-            name: "Playing **with my balls**",
-            type: "PLAYING"
+            name: "Using !help",  //The message shown
+            type: "PLAYING" //PLAYING: WATCHING: LISTENING: STREAMING:
         }
     });
-});
+ });
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
