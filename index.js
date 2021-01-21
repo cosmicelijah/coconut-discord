@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('./config.json')
 const client = new Discord.Client();
 const prefix = '?';
 
@@ -12,4 +13,4 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
-client.login('ODAxNDM5MjI1MjY5NzE0OTc0.YAgscQ._XYp_6pbEA9AgCoGuSz2359CWUU');
+client.login(config.token);
