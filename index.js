@@ -26,11 +26,13 @@ client.on('message', message =>{
     const command = args.shift().toLowerCase();
 
     if(command === 'ping'){
-        client.commands.get('ping').execute(message, args);
+        client.commands.get('ping').execute(message, args, Discord);
     } else if (command === 'bruh'){
-        client.commands.get('bruh').execute(message, args);
+        client.commands.get('bruh').execute(message, args, Discord);
     } else if (command === 'help'){
-        client.commands.get('help').execute(message, args);
+        client.commands.get('help').execute(message, args, Discord);
+    } else if (command === 'command'){
+        client.commands.get('command').execute(message ,args, Discord);
     }
 });
 
