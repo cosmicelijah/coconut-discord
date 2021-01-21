@@ -28,7 +28,9 @@ client.on('message', message =>{
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
     } else if (command === 'bruh'){
-        message.channel.send('moment')
+        client.commands.get('bruh').execute(message, args);
+    } else if (command === 'help'){
+        client.commands.get('help').execute(message, args);
     }
 });
 
