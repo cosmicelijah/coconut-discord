@@ -17,6 +17,13 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('Coconut is ready to go!');
+    client.user.setPresence({
+        status: "online",
+        game: {
+            name: "Playing **with my balls**",
+            type: "PLAYING"
+        }
+    });
 });
 
 client.on('message', message =>{
