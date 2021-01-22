@@ -13,4 +13,15 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
+//Sets the bots Presence and Activity. Uses Data in status.json.
+client.on("ready", async() => {
+    client.user.setPresence({
+        status: statusConfig.status,
+        game: {
+            name: statusConfig.activity,
+            type: statusConfig.activityType
+        }
+    });
+});
+
 client.login(config.token);
