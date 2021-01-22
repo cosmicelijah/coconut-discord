@@ -1,11 +1,10 @@
-const Discord = require('discord.js');
-const config = require('./config.json');
-const client = new Discord.Client();
+const Discord = require('discord.js')
+const config = require('./config.json')
 const status = require('./status.json')
-const prefix = '?';
 
 const fs = require('fs');
 
+const client = new Discord.Client({disableEveryone: true});
 client.login(config.token);
 
 client.commands = new Discord.Collection();
@@ -26,4 +25,3 @@ client.on("ready", async() => {
         }
     });
 });
-
