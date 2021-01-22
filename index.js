@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 const status = require('./status.json')
-
 const fs = require('fs');
+const message = require('./events/guild/message');
 
 const client = new Discord.Client({disableEveryone: true});
 client.login(config.token);
@@ -11,7 +11,7 @@ client.commands = new Discord.Collection();
 
 //client.events = new Discord.Collection();
 
-['command_handler', 'event_handler'].forEach(handler =>{
+['command_handler'].forEach(handler =>{
     require(`./handlers/${handler}`)(client, Discord);
 });
 
@@ -28,11 +28,14 @@ console.log('Coconut is ready!');
     });
 });
 
-if(!message.content.startsWith(prefix) || message.author.bot) return;
+client.message('message', async message => {
 
-const args = message.content.slice(prefix.length).split(/ +/);
-const cmd = args.shift().toLowerCase();
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-const command = client.commands.get(cmd);
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const cmd = args.shift().toLowerCase();
 
-if(command) command.execute(client, message, args, Discord);
+    const command = client.commands.get(cmd);
+
+    if(command) command.execute(client, message, args, Discord);
+});
