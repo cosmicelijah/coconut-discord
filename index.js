@@ -1,9 +1,9 @@
 const Discord = require('discord.js')
-const config = require('./config.json')
-const status = require('./status.json')
-const fs = require('fs');
-
+const config = require('/app/config.json')
+const status = require('/app/status.json')
+const fs = require('fs')
 const client = new Discord.Client({disableEveryone: true});
+
 client.login(config.token);
 
 client.commands = new Discord.Collection();
@@ -14,10 +14,8 @@ client.commands = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 });
 
-client.on("ready", async() => {
-
-console.log('Coconut is ready!');
-
+client.once("ready", () => {
+    console.log('Coconut is ready!');
     client.user.setPresence({
         status: status.active,
         game: {
@@ -27,14 +25,16 @@ console.log('Coconut is ready!');
     });
 });
 
-client.on("message", async message => {
-
+client.on("message", message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const cmd = args.shift().toLowerCase();
+    let prefix = settings.prefix;
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0].toLowerCase();
+    let args = messageArray.slice(1);
 
-    const command = client.commands.get(cmd);
 
-    if(command) command.execute(client, message, args, Discord);
+    let cmd = bot.commands.get(command.slice(prefix.length));
+    if (cmd) cmd.run(bot, message, args);
+
 });
