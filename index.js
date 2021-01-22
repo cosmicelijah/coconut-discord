@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const config = require('/app/config.json')
 const status = require('/app/status.json')
 const fs = require('fs')
+let prefix = config.prefix
 const client = new Discord.Client({disableEveryone: true});
 
 client.login(config.token);
@@ -28,13 +29,9 @@ client.once("ready", () => {
 client.on("message", message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-    let prefix = settings.prefix;
-    let messageArray = message.content.split(" ");
-    let command = messageArray[0].toLowerCase();
-    let args = messageArray.slice(1);
-
-
-    let cmd = bot.commands.get(command.slice(prefix.length));
-    if (cmd) cmd.run(bot, message, args);
+    let args = message.content.slice(prefix.length).split(/ +/);
+    let command = args.shift().toLowerCase();
+    
+    if (command) command.run(client, message, args, Discord);
 
 });
