@@ -32,6 +32,5 @@ client.on("message", message => {
     let args = message.content.slice(prefix.length).split(/ +/);
     let command = args.shift().toLowerCase();
     
-    if (command) command.run(client, message, args, Discord);
-
+    if (command) command.execute(client, message, args, Discord);
 });
