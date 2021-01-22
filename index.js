@@ -27,10 +27,13 @@ client.once("ready", () => {
 });
 
 client.on("message", message => {
+    const prefix = '?';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
-    let args = message.content.slice(prefix.length).split(/ +/);
-    let command = args.shift().toLowerCase();
-    
-    if (command) command.execute(client, message, args, Discord);
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const cmd = args.shift().toLowerCase();
+
+    const command = client.commands.get(cmd);
+
+    if(command) command.execute(client, message, args, Discord);
 });
