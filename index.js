@@ -27,7 +27,7 @@ console.log('Coconut is ready!');
     });
 });
 
-client.message('message', async message => {
+client.on("message", async message => {
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
