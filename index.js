@@ -17,6 +17,7 @@ client.commands = new Discord.Collection();
 
 client.once("ready", () => {
     console.log('Coconut is ready!');
+    console.log(status.statusType);
     client.user.setPresence({
         status: status.statusType,
         game: {
