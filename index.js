@@ -17,7 +17,7 @@ client.events = new Discord.Collection();
 //Sets the bots Presence and Activity. Uses Data in status.json.
 client.on("ready", async() => {
     client.user.setPresence({
-        status: status.status,
+        status: status.active,
         game: {
             name: status.activity,
             type: status.activityType
