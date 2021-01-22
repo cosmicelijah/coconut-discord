@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 const config = require('./config.json')
 const status = require('./status.json')
 const fs = require('fs');
-const message = require('./events/guild/message');
 
 const client = new Discord.Client({disableEveryone: true});
 client.login(config.token);
