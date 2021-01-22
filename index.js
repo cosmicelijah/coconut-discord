@@ -6,6 +6,8 @@ const prefix = '?';
 
 const fs = require('fs');
 
+client.login(config.token);
+
 client.commands = new Discord.Collection();
 
 client.events = new Discord.Collection();
@@ -25,4 +27,3 @@ client.on("ready", async() => {
     });
 });
 
-client.login(config.token);
