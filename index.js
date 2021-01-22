@@ -17,13 +17,13 @@ client.commands = new Discord.Collection();
 
 client.once("ready", () => {
     console.log('Coconut is ready!');
-    client.user.setPresence('TModLoader 64-bit', { type: 'PLAYING' }).catch(console.error);
-    //     status: status.statusType,
-    //     game: {
-    //         name: status.activity,
-    //         type: status.activityType
-    //     }
-//    });
+    client.user.setPresence({
+        status: status.active,
+        game: {
+            name: status.activity,
+            type: status.activityType
+        }
+    });
 });
 
 client.on("message", message => {
