@@ -20,7 +20,7 @@ client.once("ready", () => {
     console.log(status.statusType);
     client.user.setPresence({
         status: status.statusType,
-        game: {
+        activity: {
             name: status.activity,
             type: status.activityType
         }
