@@ -12,11 +12,12 @@ module.exports = {
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
         var selectImage = imageDatabase[randKey]
+        console.log(`${selectImage}`);
             let coconutEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .setAuthor('Coconut here,')
                 .setTitle("Here's the image you requested nya~")
-                .setImage(selectImage);
+                .setImage(`${selectImage}`);
             message.channel.send(coconutEmbed);
     }
 }
