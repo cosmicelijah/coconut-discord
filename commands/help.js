@@ -3,14 +3,14 @@ const { Channel } = require("discord.js");
 module.exports = {
     name: 'help',
     description: "list of available commands",
-    execute(client, message, args, Discord, commands){
+    execute(client, message, args, Discord){
         let helpEmbed = new Discord.MessageEmbed()
             .setColor('#FAF0E6')
             .setAuthor('Helpful Coconut here,')
             .setTitle('List of commands')
             .addFields(
                 {name: "Prefix to activate me", value: 'Use a "?" to call me, but you already know that nya~'},
-                {name: "Help", value: `${commands.help.description}`},
+                {name: "Help", value: `${client.commands.help.description}`},
                 {name: "Ping", value: "This command is used to test if I'm online or not, don't overuse or or I'll get mad!!! >︿<"},
                 {name: "Coming soon!", value: "More features coming soon, so keep your eyes peeled!"}
             )

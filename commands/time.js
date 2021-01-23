@@ -2,7 +2,7 @@ let timeDate = new Date();
 module.exports = {
     name: 'time',
     description: "current time", 
-    execute(client, message, args, Discord, commands){
+    execute(client, message, args, Discord){
         let timeEmbed = new Discord.MessageEmbed()
             .setColor('#890674')
             .addFields(

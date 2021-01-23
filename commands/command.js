@@ -1,7 +1,7 @@
 module.exports = {
     name: 'command',
     description: "Embeds",
-    execute(client, message, args, Discord, commands){
+    execute(client, message, args, Discord){
         let newEmbed = new Discord.MessageEmbed()
             .setColor('#123456')
             .setTitle('Embed Test')
