@@ -36,5 +36,5 @@ client.on("message", message => {
 
     const command = client.commands.get(cmd);
 
-    if(command) command.execute(client, message, args, Discord);
+    if(command) command.execute(client, message, args, Discord, commands);
 });

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'bruh',
     description: "bruh",
-    execute(client, message, args, Discord){
+    execute(client, message, args, Discord, commands){
         
         if(message.member.roles.cache.has('801667371295047710')){
             let bruhGoodEmbed = new Discord.MessageEmbed()
