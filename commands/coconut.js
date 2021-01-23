@@ -16,9 +16,7 @@ module.exports = {
                 .setColor('#1fdd94')
                 .setAuthor('Coconut here,')
                 .setTitle("Here's the image you requested nya~")
-                .setImage(image: {
-                    "url": "selectImage"
-                });
+                .setImage(`${selectImage}`);
             message.channel.send(coconutEmbed);
     }
 }
