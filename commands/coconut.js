@@ -16,7 +16,7 @@ module.exports = {
                 .setColor('#1fdd94')
                 .setAuthor('Coconut here,')
                 .setTitle("Here's the image you requested nya~")
-                .setImage('https://discord.com/channels/564521835409178625/802409702913736724/802409720723800124');
+                .setImage('https://cdn.discordapp.com/attachments/787793633943748613/802347465637888081/9120DCE7-534A-435C-9714-E4B71275069E.JPG');
             message.channel.send(coconutEmbed);
     }
 }
