@@ -1,5 +1,6 @@
+const imageDatabase = require("/app/data/imageDatabase.json")
 const coconutArray = []
-const cultureAmount = 50
+const cultureAmount = 13
 for (i = 0; i < cultureAmount; i++) {
     coconutArray.push(i);
 };
@@ -10,6 +11,7 @@ module.exports = {
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
-            console.log(randKey);
+        var selectImage = imageDatabase[randKey]
+        message.channel.send(selectImage);
     }
 }
