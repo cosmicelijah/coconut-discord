@@ -1,5 +1,5 @@
 const { Channel } = require("discord.js");
-const commandHelp = require(`./help.js`)
+const commandHelp = require("./ping.js")
 module.exports = {
     name: 'help',
     description: "list of available commands",
