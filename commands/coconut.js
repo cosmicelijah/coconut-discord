@@ -19,6 +19,10 @@ module.exports = {
         //         .setTitle("Here's the image you requested nya~")
         //         .setImage(`${selectImage}`);
         //     message.channel.send(coconutEmbed);
-        message.channel.send(`Command name: ${coconut}\nArguments: ${args}`);
+        if (!args.length) {
+            return message.channel.send('no');
+        }
+        
+        message.channel.send(`${args}`);
     }
 }
