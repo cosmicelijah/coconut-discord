@@ -41,7 +41,7 @@ module.exports = {
         if (!args.length) {
             let noArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
-                .addField(
+                .addFields(
                     {name: "Try again!", value: "Use image or gif after the command to specify what you want!"}
                 )
                 .setTitle('Oops!');
