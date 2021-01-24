@@ -25,7 +25,7 @@ module.exports = {
             let noArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .addField(
-                    {name: "Try again!", value: 'Use \"image\" or \"gif\" after the command to specify what you want!'}
+                    {name: "Try again!", value: 'Use image or gif after the command to specify what you want!'}
                 )
                 .setTitle('Oops!');
             message.channel.send(noArgEmbed);
