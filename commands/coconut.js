@@ -1,35 +1,41 @@
 const imageDatabase = require("/app/data/imageDatabase.json")
 const gifDatabase = require("/app/data/gifDatabase.json")
 const coconutArray = []
-const cultureAmount = 50
+const cultureAmount = 50 //Change if adding more to imageDatabase.json
+//Image array loop
 for (i = 0; i < cultureAmount; i++) {
     coconutArray.push(i);
 };
 const coconutGifArray = []
-const gifAmount = 4
+const gifAmount = 4 //Change if adding more to to gifDatabase.json
+//Gif array loop
 for (j = 0; j < gifAmount; j++) {
-    coconutArray.push(j);
+    coconutGifArray.push(j);
 };
 module.exports = { 
     name: 'coconut',
-    description: "Coconut images (may contain the S P I C Y)",
+    description: "Coconut images/gifs (may contain the S P I C Y)",
     execute(client, message, args, Discord){
-
+        //Image random number generator
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
-        var selectGif = gifDatabase[randKey]
         var selectImage = imageDatabase[randKey]
+        //Gif random number generator
+        const gifKeys = Object.keys(coconutGifArray)
+        const randGifIndex = Math.floor(Math.random() * gifKeys.length)
+        const randGifKey = gifKeys[randGifIndex]
+        var selectGif = gifDatabase[randGifKey]
 
         if (!args.length) {
             let noArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .addField(
-                    {name: "Try again!", value: 'Use image or gif after the command to specify what you want!'}
+                    {name: "Try again!", value: "Use image or gif after the command to specify what you want!"}
                 )
                 .setTitle('Oops!');
             message.channel.send(noArgEmbed);
-
+        
         } else if(args[0] === "image") {
             let coconutImageEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
