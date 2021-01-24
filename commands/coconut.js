@@ -23,4 +23,5 @@ module.exports = {
         } else if(args[1] == "hurb") {
             message.channel.send("no");
         };
+    }
 }
