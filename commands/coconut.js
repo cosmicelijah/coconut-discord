@@ -1,32 +1,43 @@
 const imageDatabase = require("/app/data/imageDatabase.json")
 const gifDatabase = require("/app/data/gifDatabase.json")
 const coconutArray = []
-const cultureAmount = 50 //Change if adding more to imageDatabase.json
+
+//Change if adding more to imageDatabase.json
+const cultureAmount = 50 
+
 //Image array loop
 for (i = 0; i < cultureAmount; i++) {
     coconutArray.push(i);
 };
+
 const coconutGifArray = []
-const gifAmount = 4 //Change if adding more to to gifDatabase.json
+
+//Change if adding more to to gifDatabase.json
+const gifAmount = 4 
+
 //Gif array loop
 for (j = 0; j < gifAmount; j++) {
     coconutGifArray.push(j);
 };
+
 module.exports = { 
     name: 'coconut',
     description: "Coconut images/gifs (may contain the S P I C Y)",
     execute(client, message, args, Discord){
-        //Image random number generator
+        
+        //Image random integer generator
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
         var selectImage = imageDatabase[randKey]
-        //Gif random number generator
+
+        //Gif random integer generator
         const gifKeys = Object.keys(coconutGifArray)
         const randGifIndex = Math.floor(Math.random() * gifKeys.length)
         const randGifKey = gifKeys[randGifIndex]
         var selectGif = gifDatabase[randGifKey]
 
+        //no args
         if (!args.length) {
             let noArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
@@ -36,6 +47,7 @@ module.exports = {
                 .setTitle('Oops!');
             message.channel.send(noArgEmbed);
         
+        //image
         } else if(args[0] === "image") {
             let coconutImageEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
@@ -43,6 +55,7 @@ module.exports = {
                 .setImage(`${selectImage}`);
             message.channel.send(coconutImageEmbed);
 
+        //gif 
         } else if(args[0] === "gif") {
             let coconutGifEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')

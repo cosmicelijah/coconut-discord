@@ -38,3 +38,6 @@ client.on("message", message => {
 
     if(command) command.execute(client, message, args, Discord);
 });
+
+//To do
+//Fix coconut.js no args
