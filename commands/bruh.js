@@ -27,6 +27,5 @@ module.exports = {
 
             message.channel.send(bruhCringeEmbed);
         }
-
     }
 }

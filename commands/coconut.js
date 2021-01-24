@@ -14,31 +14,35 @@ module.exports = {
     name: 'coconut',
     description: "Coconut images (may contain the S P I C Y)",
     execute(client, message, args, Discord){
+
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
         var selectGif = gifDatabase[randKey]
         var selectImage = imageDatabase[randKey]
+
         if (!args.length) {
             let noArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
-                .setTitle('Oops!')
                 .addField(
                     {name: "Try again!", value: 'Use "image" or "gif" after the command to specify what you want!'}
-                );
+                )
+                .setTitle('Oops!');
             message.channel.send(noArgEmbed);
 
-        } else if(args.length == "image") {
+        } else if(args[0] === "image") {
             let coconutImageEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .setTitle("Here's the image you requested nya~")
                 .setImage(`${selectImage}`);
             message.channel.send(coconutImageEmbed);
-        } else if(args.length == "gif") {
+
+        } else if(args[0] === "gif") {
             let coconutGifEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .setTitle("Here's the gif you requested nya~")
-                .setImage(`${selectGif}`)
+                .setImage(`${selectGif}`);
+            message.channel.send(coconutGifEmbed);
         }
     }
 }
