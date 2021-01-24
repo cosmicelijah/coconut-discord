@@ -12,7 +12,6 @@ module.exports = {
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
         var selectImage = imageDatabase[randKey]
-        console.log(`${selectImage}`);
             let coconutEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .setTitle("Here's the image you requested nya~")
