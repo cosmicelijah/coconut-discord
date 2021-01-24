@@ -1,6 +1,6 @@
 const imageDatabase = require("/app/data/imageDatabase.json")
 const coconutArray = []
-const cultureAmount = 13
+const cultureAmount = 51
 for (i = 0; i < cultureAmount; i++) {
     coconutArray.push(i);
 };
@@ -15,7 +15,6 @@ module.exports = {
         console.log(`${selectImage}`);
             let coconutEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
-                .setAuthor('Coconut here,')
                 .setTitle("Here's the image you requested nya~")
                 .setImage(`${selectImage}`);
             message.channel.send(coconutEmbed);
