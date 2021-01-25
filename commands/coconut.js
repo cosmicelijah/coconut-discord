@@ -46,6 +46,8 @@ module.exports = {
                 )
                 .setTitle('Oops!');
             message.channel.send(noArgEmbed);
+        } else if(!args[0] === "image", "gif") {
+            message.channel.send("That's not an argument, shitass");
         
         //image
         } else if(args[0] === "image") {
