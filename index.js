@@ -40,4 +40,4 @@ client.on("message", message => {
 });
 
 //To do
-//Fix coconut.js no args
+//Fix coconut.js no args (done)
