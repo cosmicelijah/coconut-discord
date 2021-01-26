@@ -47,10 +47,6 @@ module.exports = {
                 .setTitle('Oops!');
             message.channel.send(noArgEmbed);
 
-        //wrong args
-        } else if(args[0] !== "image", "gif") {
-            message.channel.send("That's not an argument, shitass");
-        
         //image
         } else if(args[0] === "image") {
             let coconutImageEmbed = new Discord.MessageEmbed()
@@ -66,6 +62,10 @@ module.exports = {
                 .setTitle("Here's the gif you requested nya~")
                 .setImage(`${selectGif}`);
             message.channel.send(coconutGifEmbed);
+
+        //wrong args
+        } else if(args[0] !== "image", "gif") {
+            message.channel.send("That's not an argument, shitass");
         }
     }
 }
