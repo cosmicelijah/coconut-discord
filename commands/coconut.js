@@ -37,15 +37,15 @@ module.exports = {
         const randGifKey = gifKeys[randGifIndex]
         var selectGif = gifDatabase[randGifKey]
 
-        //no args
-        if (!args.length) {
-            let noArgEmbed = new Discord.MessageEmbed()
+        //help
+        if (args[0] === "help") {
+            let helpArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .addFields(
-                    {name: "Try again!", value: "Use image or gif after the command to specify what you want!"}
+                    {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
                 )
-                .setTitle('Oops!');
-            message.channel.send(noArgEmbed);
+                .setTitle('Helpful Info for you!');
+            message.channel.send(helpArgEmbed);
 
         //image
         } else if(args[0] === "image") {
@@ -63,9 +63,16 @@ module.exports = {
                 .setImage(`${selectGif}`);
             message.channel.send(coconutGifEmbed);
 
-        //wrong args
-        } else if(args[0] !== "image", "gif") {
-            message.channel.send("That's not an argument, shitass");
+        //wrong args or no args
+        } else if(args[0] !== "image", "gif" || !args.length) {
+            let coconutNoArgsEmbed = new Discord.MessageEmbed()
+                .setColor('#1fdd94')
+                .addFields( 
+                    {name: "Try again!", value: 'You didn\'t use right args or any args at all, check spelling or consult "?coconut help" for more.'} 
+                )
+                .setImage('https://i.redd.it/3sp4asffvmc61.jpg')
+                .setTitle('Oops!');
+            message.channel.send(coconutNoArgsEmbed);
         }
     }
 }
