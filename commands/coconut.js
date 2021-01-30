@@ -56,12 +56,13 @@ module.exports = {
                     .setTitle("69th image, nice")
                     .setImage(`${selectImage}`);
                 message.channel.send(coconut69Image);
-            };
-            let coconutImageEmbed = new Discord.MessageEmbed()
-                .setColor('#1fdd94')
-                .setTitle("Here's the image you requested nya~")
-                .setImage(`${selectImage}`);
-            message.channel.send(coconutImageEmbed);
+            } else if(selectImage != 69) {
+                let coconutImageEmbed = new Discord.MessageEmbed()
+                    .setColor('#1fdd94')
+                    .setTitle("Here's the image you requested nya~")
+                    .setImage(`${selectImage}`);
+                message.channel.send(coconutImageEmbed);
+            }
 
         //gif 
         } else if(args[0] === "gif") {
