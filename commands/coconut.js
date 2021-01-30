@@ -3,12 +3,12 @@ const gifDatabase = require("/app/data/gifDatabase.json")
 const coconutArray = []
 
 //Change if adding more to imageDatabase.json
-const cultureAmount = 50 
+const cultureAmount = 103
 
 //Image array loop
-for (i = 0; i < cultureAmount; i++) {
-    coconutArray.push(i);
-};
+// for (i = 0; i < cultureAmount; i++) {
+//     coconutArray.push(i);
+// };
 
 const coconutGifArray = []
 
@@ -29,7 +29,8 @@ module.exports = {
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
         const randKey = keys[randIndex]
-        var selectImage = imageDatabase[randKey]
+        // var selectImage = imageDatabase[randKey]
+        var selectImage = 69
 
         //Gif random integer generator
         const gifKeys = Object.keys(coconutGifArray)
@@ -49,6 +50,9 @@ module.exports = {
 
         //image
         } else if(args[0] === "image") {
+            if(selectImage == 69) {
+                message.channel.send("69th image in database, nice")
+            };
             let coconutImageEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .setTitle("Here's the image you requested nya~")
