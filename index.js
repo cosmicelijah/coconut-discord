@@ -5,7 +5,7 @@ const fs = require('fs')
 let prefix = config.prefix
 const client = new Discord.Client({disableEveryone: true});
 
-client.login(config.token);
+client.login(process.env.TOKEN);
 
 client.commands = new Discord.Collection();
 
