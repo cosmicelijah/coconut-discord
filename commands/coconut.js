@@ -2,20 +2,20 @@ const imageDatabase = require("/app/data/imageDatabase.json")
 const gifDatabase = require("/app/data/gifDatabase.json")
 const coconutArray = []
 
-//Change if adding more to imageDatabase.json
+// Change if adding more to imageDatabase.json
 const cultureAmount = 103
 
-//Image array loop
-// for (i = 0; i < cultureAmount; i++) {
-//     coconutArray.push(i);
-// };
+// Image array loop
+for (i = 0; i < cultureAmount; i++) {
+    coconutArray.push(i);
+};
 
 const coconutGifArray = []
 
-//Change if adding more to to gifDatabase.json
+// Change if adding more to to gifDatabase.json
 const gifAmount = 4 
 
-//Gif array loop
+// Gif array loop
 for (j = 0; j < gifAmount; j++) {
     coconutGifArray.push(j);
 };
@@ -25,14 +25,13 @@ module.exports = {
     description: "Coconut images/gifs (may contain the S P I C Y)",
     execute(client, message, args, Discord){
         
-        //Image random integer generator
+        // Image random integer generator
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
-        const randKey = 69
-        // const randKey = keys[randIndex]
+        const randKey = keys[randIndex]
         var selectImage = imageDatabase[randKey]
 
-        //Gif random integer generator
+        // Gif random integer generator
         const gifKeys = Object.keys(coconutGifArray)
         const randGifIndex = Math.floor(Math.random() * gifKeys.length)
         const randGifKey = gifKeys[randGifIndex]
