@@ -28,9 +28,9 @@ module.exports = {
         //Image random integer generator
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
-        const randKey = keys[randIndex]
-        // var selectImage = imageDatabase[randKey]
-        var selectImage = 69
+        const randKey = 69
+        // const randKey = keys[randIndex]
+        var selectImage = imageDatabase[randKey]
 
         //Gif random integer generator
         const gifKeys = Object.keys(coconutGifArray)
@@ -50,13 +50,13 @@ module.exports = {
 
         //image
         } else if(args[0] === "image") {
-            if(selectImage == 69) {
+            if(randKey == 69) {
                 let coconut69Image = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .setTitle("69th image, nice")
                     .setImage(`${selectImage}`);
                 message.channel.send(coconut69Image);
-            } else if(selectImage != 69) {
+            } else if(randkey != 69) {
                 let coconutImageEmbed = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .setTitle("Here's the image you requested nya~")
