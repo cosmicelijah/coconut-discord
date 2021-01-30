@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const config = require('/app/config.json')
+// const config = require('/app/config.json')
 const status = require('/app/status.json')
 const fs = require('fs')
 let prefix = '?'
@@ -34,8 +34,8 @@ client.on("message", message => {
     if(command) command.execute(client, message, args, Discord);
 });
 
-//To do
-//Fix coconut.js no args (done)
+// To do
+// Fix coconut.js no args (done)
 // Add 'dumpass' to coconut command
 // Add comments
 // Prettyify code

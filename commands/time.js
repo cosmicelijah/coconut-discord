@@ -1,8 +1,8 @@
-let timeDate = new Date();
 module.exports = {
     name: 'time',
     description: "current time", 
     execute(client, message, args, Discord){
+        let timeDate = new Date();
         let timeEmbed = new Discord.MessageEmbed()
             .setColor('#890674')
             .addFields(
