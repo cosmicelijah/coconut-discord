@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const config = require('/app/config.json')
 const status = require('/app/status.json')
 const fs = require('fs')
-let prefix = config.prefix
+let prefix = '?'
 const client = new Discord.Client({disableEveryone: true});
 
 client.login(process.env.TOKEN);
