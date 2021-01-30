@@ -9,15 +9,12 @@ client.login(config.token);
 
 client.commands = new Discord.Collection();
 
-//client.events = new Discord.Collection();
-
 ['command_handler'].forEach(handler =>{
     require(`./handlers/${handler}`)(client, Discord);
 });
 
+// Set custom status 
 client.once("ready", () => {
-    console.log('Coconut is ready!');
-    console.log(status.statusType);
     client.user.setPresence({
         status: status.statusType,
         activity: {
@@ -28,12 +25,10 @@ client.once("ready", () => {
 });
 
 client.on("message", message => {
-    const prefix = '?';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
-
     const command = client.commands.get(cmd);
 
     if(command) command.execute(client, message, args, Discord);
@@ -41,3 +36,7 @@ client.on("message", message => {
 
 //To do
 //Fix coconut.js no args (done)
+// Add 'dumpass' to coconut command
+// Add comments
+// Prettyify code
+// Optimize shit so it aint so
