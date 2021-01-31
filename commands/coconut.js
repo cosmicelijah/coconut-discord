@@ -55,8 +55,7 @@ module.exports = {
                 // for (d = 0; d < dumpNumber; d++) {
 
                 // }
-            }
-            if(randKey == 69) {
+            } else if(randKey == 69) {
                 let coconut69Image = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .setTitle("69th image, nice")
