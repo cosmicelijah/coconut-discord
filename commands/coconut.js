@@ -49,12 +49,13 @@ module.exports = {
 
         //image
         } else if(args[0] === "image") {
-            // if(args[1] === "dumpass") {
-            //     var dumpNumber = args[2]
-            //     for (d = 0; d < dumpNumber; d++) {
+            if(args[1] === "dumpass") {
+                var dumpNumber = args[2]
+                message.channel.send(`${dumpNumber}`);
+                // for (d = 0; d < dumpNumber; d++) {
 
-            //     }
-            // }
+                // }
+            }
             if(randKey == 69) {
                 let coconut69Image = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
