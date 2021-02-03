@@ -49,7 +49,7 @@ module.exports = {
 
         // recursive images OwO
         } else if(args[0] === "dumpass") {
-            var dumpNumber = args[2]
+            var dumpNumber = args[1]
                 // message.channel.send(`${dumpNumber}`);
                 for (d = 0; d < dumpNumber; d++) {
                     let coconutImageEmbed = new Discord.MessageEmbed()
