@@ -47,19 +47,21 @@ module.exports = {
                 .setTitle('Helpful Info for you!');
             message.channel.send(helpArgEmbed);
 
-        //image
-        } else if(args[0] === "image") {
-            if(args[1] === "dumpass") {
-                var dumpNumber = args[2]
+        // recursive images OwO
+        } else if(ars[0] === "dumpass") {
+            var dumpNumber = args[2]
                 // message.channel.send(`${dumpNumber}`);
                 for (d = 0; d < dumpNumber; d++) {
                     let coconutImageEmbed = new Discord.MessageEmbed()
                         .setColor('#1fdd94')
                         .setTitle("Here's the image you requested nya~")
                         .setImage(`${selectImage}`);
-                    message.channel.send(coconutImageEmbed);
                 };
-            } else if(randKey == 69) {
+                message.channel.send(coconutImageEmbed);
+        
+        // image
+        } else if(args[0] === "image") {
+            if(randKey == 69) {
                 let coconut69Image = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .setTitle("69th image, nice")
@@ -73,7 +75,7 @@ module.exports = {
                 message.channel.send(coconutImageEmbed);
             }
 
-        //gif 
+        // gif 
         } else if(args[0] === "gif") {
             let coconutGifEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
@@ -81,7 +83,7 @@ module.exports = {
                 .setImage(`${selectGif}`);
             message.channel.send(coconutGifEmbed);
 
-        //wrong args or no args
+        // wrong args or no args
         } else if(args[0] !== "image", "gif" || !args.length) {
             let coconutNoArgsEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
