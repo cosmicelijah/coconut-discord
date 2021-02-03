@@ -53,6 +53,13 @@ module.exports = {
                 var dumpNumber = args[2]
                 message.channel.send(`${dumpNumber}`);
                 for (d = 0; d < dumpNumber; d++) {
+
+                    for (i = 0; i < cultureAmount; i++) {
+                        coconutArray.push(i);
+                    };
+                    
+                    const coconutGifArray = []
+
                     let coconutImageEmbed = new Discord.MessageEmbed()
                         .setColor('#1fdd94')
                         .setTitle("Here's the image you requested nya~")
