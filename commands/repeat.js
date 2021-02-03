@@ -3,8 +3,10 @@ module.exports = {
     description: "Repeats everything the user says after the command",
     execute(client, message, args, Discord) {
         if(args.length) {
+            var repeatArgs = args[args.length]
             let repeatEmbed = new Discord.MessageEmbed()
-                .setTitle(`${args.length}`);
+                .setTitle(`${repeatArgs}`)
+                .setColor("#423879")
             message.channel.send(repeatEmbed);
         }
     }
