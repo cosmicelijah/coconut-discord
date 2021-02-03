@@ -56,8 +56,8 @@ module.exports = {
                         .setColor('#1fdd94')
                         .setTitle("Here's the image you requested nya~")
                         .setImage(`${selectImage}`);
-                };
-                message.channel.send(coconutImageEmbed);
+                    message.channel.send(coconutImageEmbed);
+                };               
         
         // image
         } else if(args[0] === "image") {
