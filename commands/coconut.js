@@ -53,7 +53,11 @@ module.exports = {
                 var dumpNumber = args[2]
                 message.channel.send(`${dumpNumber}`);
                 for (d = 0; d < dumpNumber; d++) {
-                    message.channel.send("bruh");
+                    let coconutImageEmbed = new Discord.MessageEmbed()
+                        .setColor('#1fdd94')
+                        .setTitle("Here's the image you requested nya~")
+                        .setImage(`${selectImage}`);
+                    message.channel.send(coconutImageEmbed);
                 };
             } else if(randKey == 69) {
                 let coconut69Image = new Discord.MessageEmbed()
