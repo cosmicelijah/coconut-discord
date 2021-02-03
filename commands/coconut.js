@@ -48,7 +48,7 @@ module.exports = {
             message.channel.send(helpArgEmbed);
 
         // recursive images OwO
-        } else if(ars[0] === "dumpass") {
+        } else if(args[0] === "dumpass") {
             var dumpNumber = args[2]
                 // message.channel.send(`${dumpNumber}`);
                 for (d = 0; d < dumpNumber; d++) {
