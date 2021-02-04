@@ -1,5 +1,6 @@
 {
     "statusType": "online",
-    "activityType": "PLAYING",
+    "activityType": "STREAMING",
+    "thisisacomment": "use WATCHING, LISTENING, PLAYING, and STREAMING",
     "activity": "tModLoader 69-bit"
 }
