@@ -48,25 +48,25 @@ module.exports = {
             message.channel.send(helpArgEmbed);
 
         // recursive images OwO
-        } else if(args[0] === "dumpass") {
-            var dumpNumber = args[1]
-                // message.channel.send(`${dumpNumber}`);
-                for (d = 0; d < dumpNumber; d++) {
+        // } else if(args[0] === "dumpass") {
+        //     var dumpNumber = args[1]
+        //         // message.channel.send(`${dumpNumber}`);
+        //         for (d = 0; d < dumpNumber; d++) {
 
-                    for (f = 0; f < cultureAmount; f++) {
-                        coconutArray.push(f);
-                    };
+        //             for (f = 0; f < cultureAmount; f++) {
+        //                 coconutArray.push(f);
+        //             };
 
-                    const dumpKeys = Object.keys(coconutArray)
-                    const randDumpIndex = Math.floor(Math.random() * dumpKeys.length)
-                    const randDumpKey = keys[randDumpIndex]
-                    var selectDumpImage = imageDatabase[randDumpKey]
+        //             const dumpKeys = Object.keys(coconutArray)
+        //             const randDumpIndex = Math.floor(Math.random() * dumpKeys.length)
+        //             const randDumpKey = keys[randDumpIndex]
+        //             var selectDumpImage = imageDatabase[randDumpKey]
 
-                    let coconutDumpImageEmbed = new Discord.MessageEmbed()
-                        .setColor('#1fdd94')
-                        .setImage(`${selectDumpImage}`);
-                    message.channel.send(coconutDumpImageEmbed);
-                };
+        //             let coconutDumpImageEmbed = new Discord.MessageEmbed()
+        //                 .setColor('#1fdd94')
+        //                 .setImage(`${selectDumpImage}`);
+        //             message.channel.send(coconutDumpImageEmbed);
+        //         };
         
         // image
         } else if(args[0] === "image") {
@@ -99,7 +99,7 @@ module.exports = {
                 .addFields( 
                     {name: "Try again!", value: 'You didn\'t use right args or any args at all, check spelling or consult "?coconut help" for more.'} 
                 )
-                .setImage('https://i.redd.it/3sp4asffvmc61.jpg')
+                .setImage('https://cdn.discordapp.com/attachments/787793633943748613/830682936901632030/3sp4asffvmc61.png')
                 .setTitle('Oops!');
             message.channel.send(coconutNoArgsEmbed);
         }

@@ -10,7 +10,7 @@ module.exports = {
                 {name: 'Field 1', value: 'Uno'},
                 {name: 'Field 2', value: 'Dos'}
             )
-            .setImage('http://getwallpapers.com/wallpaper/full/7/f/6/553679.jpg')
+            .setImage('https://cdn.discordapp.com/attachments/787793633943748613/830683764735737886/553679.png')
             .setFooter('This test was successful');
         message.channel.send(newEmbed);
     }

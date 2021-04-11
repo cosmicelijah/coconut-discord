@@ -9,7 +9,7 @@ module.exports = {
             .addFields(
                 {name: "Wait?", value: "Did someone ping me?"}
             )
-            .setThumbnail("https://i.redd.it/3sp4asffvmc61.jpg");
+            .setThumbnail("https://cdn.discordapp.com/attachments/787793633943748613/830682936901632030/3sp4asffvmc61.png");
         message.channel.send(pingEmbed);
     }
 }
