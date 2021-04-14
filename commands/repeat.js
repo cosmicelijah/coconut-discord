@@ -4,7 +4,7 @@ module.exports = {
     execute(client, message, args, Discord) {
         if(args.length) {
             var repeatArgs = args[args.length];
-            message.channel.send(repeatArgs);
+            message.channel.send("pp time");
             // let repeatEmbed = new Discord.MessageEmbed()
             //     .setTitle(repeatArgs)
             //     .setColor("#423879");
