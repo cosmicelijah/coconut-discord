@@ -4,11 +4,11 @@ module.exports = {
     execute(client, message, args, Discord) {
         if(args.length) {
             var repeatArgs = args;
-            message.channel.send(repeatArgs);
-            // let repeatEmbed = new Discord.MessageEmbed()
-            //     .setTitle(repeatArgs)
-            //     .setColor("#423879");
-            // message.channel.send(repeatEmbed);
+            // message.channel.send(repeatArgs);
+            let repeatEmbed = new Discord.MessageEmbed()
+                .setTitle(repeatArgs)
+                .setColor("#423879");
+            message.channel.send(repeatEmbed);
         };
     }
 }
