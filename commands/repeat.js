@@ -6,7 +6,7 @@ module.exports = {
             var repeatArgs = args;
             // message.channel.send(repeatArgs);
             let repeatEmbed = new Discord.MessageEmbed()
-                .setTitle(repeatArgs)
+                .setTitle(args.join(' '))
                 .setColor("#423879");
             message.channel.send(repeatEmbed);
         };
