@@ -42,5 +42,5 @@ client.on("message", message => {
 // More material for image and gif commands
 // 
 //
-//git commit -am "message"
-//git push -u origin main
+// git commit -am "message"
+// git push -u origin main
