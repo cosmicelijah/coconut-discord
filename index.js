@@ -41,3 +41,6 @@ client.on("message", message => {
 // Reddit image scraper for r/NEKOPARAGAME
 // More material for image and gif commands
 // 
+//
+//git commit -am "message"
+//git push -u origin main
