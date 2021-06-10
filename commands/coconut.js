@@ -46,27 +46,6 @@ module.exports = {
                 )
                 .setTitle('Helpful Info for you!');
             message.channel.send(helpArgEmbed);
-
-        // recursive images OwO
-        // } else if(args[0] === "dumpass") {
-        //     var dumpNumber = args[1]
-        //         // message.channel.send(`${dumpNumber}`);
-        //         for (d = 0; d < dumpNumber; d++) {
-
-        //             for (f = 0; f < cultureAmount; f++) {
-        //                 coconutArray.push(f);
-        //             };
-
-        //             const dumpKeys = Object.keys(coconutArray)
-        //             const randDumpIndex = Math.floor(Math.random() * dumpKeys.length)
-        //             const randDumpKey = keys[randDumpIndex]
-        //             var selectDumpImage = imageDatabase[randDumpKey]
-
-        //             let coconutDumpImageEmbed = new Discord.MessageEmbed()
-        //                 .setColor('#1fdd94')
-        //                 .setImage(`${selectDumpImage}`);
-        //             message.channel.send(coconutDumpImageEmbed);
-        //         };
         
         // image
         } else if(args[0] === "image") {
