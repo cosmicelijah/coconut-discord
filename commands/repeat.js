@@ -5,7 +5,7 @@ module.exports = {
         if(args.length) {
             var repeatArgs = args;
             // message.channel.send(repeatArgs);
-            message.delete(1000)
+            message.delete(1000);
             let repeatEmbed = new Discord.MessageEmbed()
                 .setTitle(args.join(' '))
                 .setColor("#423879");
