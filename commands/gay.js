@@ -5,7 +5,7 @@ module.exports = {
     description: "gay",
     execute(client, message, args, Discord){
 
-        if(message.member.id('451196379726086156')) {
+        if(message.author === '451196379726086156') {
             let notGayEmbed = new Discord.MessageEmbed()
             .setColor('#ff0000')
             .setTitle('You are not gay')
