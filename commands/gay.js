@@ -7,7 +7,7 @@ module.exports = {
 
         if(message.author.id === '451196379726086156') {
             let notGayEmbed = new Discord.MessageEmbed()
-            .setColor('#ff0000')
+            .setColor('#00ff00')
             .setTitle('You are not gay')
             .setImage('https://cdn.discordapp.com/attachments/787793633943748613/853062858522230904/notgay.png');
             message.channel.send(notGayEmbed);
