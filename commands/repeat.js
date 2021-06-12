@@ -9,7 +9,7 @@ module.exports = {
                 .setTitle(args.join(' '))
                 .setColor("#423879");
             message.channel.send(repeatEmbed);
-            message.delete(500);
         }
+        message.delete(500);
     }
 }
