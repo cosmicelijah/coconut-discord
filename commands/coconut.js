@@ -13,18 +13,18 @@ for (i = 0; i < cultureAmount; i++) {
 const coconutGifArray = []
 
 // Change if adding more to to gifDatabase.json
-const gifAmount = 4 
+const gifAmount = 4
 
 // Gif array loop
 for (j = 0; j < gifAmount; j++) {
     coconutGifArray.push(j);
 };
 
-module.exports = { 
+module.exports = {
     name: 'coconut',
     description: "Coconut images/gifs (may contain the S P I C Y)",
-    execute(client, message, args, Discord){
-        
+    execute(client, message, args, Discord) {
+
         // Image random integer generator
         const keys = Object.keys(coconutArray)
         const randIndex = Math.floor(Math.random() * keys.length)
@@ -42,20 +42,20 @@ module.exports = {
             let helpArgEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .addFields(
-                    {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
+                    { name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!" }
                 )
                 .setTitle('Helpful Info for you!');
             message.channel.send(helpArgEmbed);
-        
-        // image
-        } else if(args[0] === "image") {
-            if(randKey == 69) {
+
+            // image
+        } else if (args[0] === "image") {
+            if (randKey == 69) {
                 let coconut69Image = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .setTitle("69th image, nice")
                     .setImage(`${selectImage}`);
                 message.channel.send(coconut69Image);
-            } else if(randKey != 69) {
+            } else if (randKey != 69) {
                 let coconutImageEmbed = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .setTitle("Here's the image you requested nya~")
@@ -63,20 +63,20 @@ module.exports = {
                 message.channel.send(coconutImageEmbed);
             }
 
-        // gif 
-        } else if(args[0] === "gif") {
+            // gif 
+        } else if (args[0] === "gif") {
             let coconutGifEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
                 .setTitle("Here's the gif you requested nya~")
                 .setImage(`${selectGif}`);
             message.channel.send(coconutGifEmbed);
 
-        // wrong args or no args
-        } else if(args[0] !== "image", "gif" || !args.length) {
+            // wrong args or no args
+        } else if (args[0] !== "image", "gif" || !args.length) {
             let coconutNoArgsEmbed = new Discord.MessageEmbed()
                 .setColor('#1fdd94')
-                .addFields( 
-                    {name: "Try again!", value: 'You didn\'t use right args or any args at all, check spelling or consult "?coconut help" for more.'} 
+                .addFields(
+                    { name: "Try again!", value: 'You didn\'t use right args or any args at all, check spelling or consult "?coconut help" for more.' }
                 )
                 .setImage('https://cdn.discordapp.com/attachments/787793633943748613/830682936901632030/3sp4asffvmc61.png')
                 .setTitle('Oops!');
