@@ -9,6 +9,9 @@ module.exports = {
                 .setTitle(args.join(' '))
                 .setColor("#423879");
             message.channel.send(repeatEmbed);
-        };
+        }
+        if (message.content.includes("?repeat")) {
+            message.delete();
+        }
     }
 }
