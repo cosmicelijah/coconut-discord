@@ -4,15 +4,8 @@ const gifDatabase = require("../data/gifDatabase.json")
 // # of keys in imageDatabase.json
 const imageAmount = Object.keys(imageDatabase).length
 
-const coconutGifArray = []
-
 // # of keys in gifDatabase.json
 const gifAmount = Object.keys(gifDatabase).length 
-
-// Gif array loop
-for (j = 0; j < gifAmount; j++) {
-    coconutGifArray.push(j);
-};
 
 module.exports = { 
     name: 'coconut',
