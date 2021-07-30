@@ -37,71 +37,54 @@ module.exports = {
         const randGifKey = gifKeys[randGifIndex]
         var selectGif = gifDatabase[randGifKey]
 
-        //help
-        if (args[0] === "help") {
-            let helpArgEmbed = new Discord.MessageEmbed()
-                .setColor('#1fdd94')
-                .addFields(
-                    {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
-                )
-                .setTitle('Helpful Info for you!');
-            message.channel.send(helpArgEmbed);
-
-        // recursive images OwO
-        // } else if(args[0] === "dumpass") {
-        //     var dumpNumber = args[1]
-        //         // message.channel.send(`${dumpNumber}`);
-        //         for (d = 0; d < dumpNumber; d++) {
-
-        //             for (f = 0; f < cultureAmount; f++) {
-        //                 coconutArray.push(f);
-        //             };
-
-        //             const dumpKeys = Object.keys(coconutArray)
-        //             const randDumpIndex = Math.floor(Math.random() * dumpKeys.length)
-        //             const randDumpKey = keys[randDumpIndex]
-        //             var selectDumpImage = imageDatabase[randDumpKey]
-
-        //             let coconutDumpImageEmbed = new Discord.MessageEmbed()
-        //                 .setColor('#1fdd94')
-        //                 .setImage(`${selectDumpImage}`);
-        //             message.channel.send(coconutDumpImageEmbed);
-        //         };
-        
-        // image
-        } else if(args[0] === "image") {
-            if(randKey == 69) {
-                let coconut69Image = new Discord.MessageEmbed()
+        switch(args[0]) {
+            case "help":
+                let helpArgEmbed = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
-                    .setTitle("69th image, nice")
-                    .setImage(`${selectImage}`);
-                message.channel.send(coconut69Image);
-            } else if(randKey != 69) {
-                let coconutImageEmbed = new Discord.MessageEmbed()
+                    .addFields(
+                        {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
+                    )
+                    .setTitle('Helpful Info for you!');
+                message.channel.send(helpArgEmbed);
+                break;
+
+            case "image":
+                if(randKey == 69) {
+                    let coconut69Image = new Discord.MessageEmbed()
+                        .setColor('#1fdd94')
+                        .setTitle("69th image, nice")
+                        .setImage(`${selectImage}`);
+                    message.channel.send(coconut69Image);
+                } else if(randKey != 69) {
+                    let coconutImageEmbed = new Discord.MessageEmbed()
+                        .setColor('#1fdd94')
+                        .setTitle("Here's the image you requested nya~")
+                        .setImage(`${selectImage}`);
+                    message.channel.send(coconutImageEmbed);
+                }
+                break;
+
+            case "gif":
+                let coconutGifEmbed = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
-                    .setTitle("Here's the image you requested nya~")
-                    .setImage(`${selectImage}`);
-                message.channel.send(coconutImageEmbed);
-            }
+                    .setTitle("Here's the gif you requested nya~")
+                    .setImage(`${selectGif}`);
+                message.channel.send(coconutGifEmbed);
+                break;
 
-        // gif 
-        } else if(args[0] === "gif") {
-            let coconutGifEmbed = new Discord.MessageEmbed()
-                .setColor('#1fdd94')
-                .setTitle("Here's the gif you requested nya~")
-                .setImage(`${selectGif}`);
-            message.channel.send(coconutGifEmbed);
+            case "nsfw":
+                message.channel.send("Coming soon!");
+                break;
 
-        // wrong args or no args
-        } else if(args[0] !== "image", "gif" || !args.length) {
-            let coconutNoArgsEmbed = new Discord.MessageEmbed()
-                .setColor('#1fdd94')
-                .addFields( 
-                    {name: "Try again!", value: 'You didn\'t use right args or any args at all, check spelling or consult "?coconut help" for more.'} 
-                )
-                .setImage('https://cdn.discordapp.com/attachments/787793633943748613/830682936901632030/3sp4asffvmc61.png')
-                .setTitle('Oops!');
-            message.channel.send(coconutNoArgsEmbed);
+            default:
+                let defaultEmbed = new Discord.MessageEmbed()
+                    .setColor('#1fdd94')
+                    .addFields(
+                        {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
+                    )
+                    .setTitle('Helpful Info for you!');
+                message.channel.send(defaultEmbed);
+                break;
         }
     }
 }

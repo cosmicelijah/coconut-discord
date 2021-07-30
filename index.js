@@ -40,7 +40,7 @@ client.on("message", message => {
 // Optimize shit so it aint so
 // Reddit image scraper for r/NEKOPARAGAME
 // More material for image and gif commands
-// 
+// Differentiate SFW and NSFW (or possibly minimally censor the nsfw to fit with sfw and create a seperate nsfw argument for uncensored)
 //
 // git commit -am "message"
 // git push -u origin "branch"

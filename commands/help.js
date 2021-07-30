@@ -3,7 +3,20 @@ const commandPing = require("./ping.js")
 const commandTime = require("./time.js")
 const commandCoconut = require('./coconut.js')
 const commandRepeat = require('./repeat.js')
-module.exports = {
+// const command_files = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+// const description = require(`./${file}`);
+
+// for(const file of command_files){
+//     const command = require(`../commands/${file}`);
+//     if(command.description){
+//         client.commands.set(command.description, command);
+//     }
+//     else {
+//         return;
+//     }
+    
+
+module.exports = { 
     name: 'help',
     description: "list of available commands",
     execute(client, message, args, Discord){
