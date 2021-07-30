@@ -4,7 +4,7 @@ const fs = require('fs')
 let prefix = '?'
 const client = new Discord.Client({disableEveryone: true});
 
-client.login(process.env.TOKEN);
+client.login("ODAxNDM5MjI1MjY5NzE0OTc0.YAgscQ._XYp_6pbEA9AgCoGuSz2359CWUU");
 
 client.commands = new Discord.Collection();
 

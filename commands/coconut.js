@@ -1,5 +1,5 @@
-const imageDatabase = require("/app/data/imageDatabase.json")
-const gifDatabase = require("/app/data/gifDatabase.json")
+const imageDatabase = require("../data/imageDatabase.json")
+const gifDatabase = require("../data/gifDatabase.json")
 const coconutArray = []
 
 // Change if adding more to imageDatabase.json
