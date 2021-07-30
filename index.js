@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const status = require('/app/data/status.json')
+const status = require('./data/status.json')
 const fs = require('fs')
 let prefix = '?'
 const client = new Discord.Client({disableEveryone: true});
