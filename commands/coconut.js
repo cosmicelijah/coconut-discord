@@ -1,19 +1,13 @@
 const imageDatabase = require("../data/imageDatabase.json")
 const gifDatabase = require("../data/gifDatabase.json")
-const coconutArray = []
 
-// Change if adding more to imageDatabase.json
-const cultureAmount = 103
-
-// Image array loop
-for (i = 0; i < cultureAmount; i++) {
-    coconutArray.push(i);
-};
+// # of keys in imageDatabase.json
+const imageAmount = Object.keys(imageDatabase).length
 
 const coconutGifArray = []
 
-// Change if adding more to to gifDatabase.json
-const gifAmount = 4 
+// # of keys in gifDatabase.json
+const gifAmount = Object.keys(gifDatabase).length 
 
 // Gif array loop
 for (j = 0; j < gifAmount; j++) {
@@ -26,36 +20,24 @@ module.exports = {
     execute(client, message, args, Discord){
         
         // Image random integer generator
-        const keys = Object.keys(coconutArray)
-        const randIndex = Math.floor(Math.random() * keys.length)
-        const randKey = keys[randIndex]
-        var selectImage = imageDatabase[randKey]
+        var randIndex = Math.floor(Math.random() * imageAmount)
+        var selectImage = imageDatabase[randIndex]
 
         // Gif random integer generator
-        const gifKeys = Object.keys(coconutGifArray)
-        const randGifIndex = Math.floor(Math.random() * gifKeys.length)
-        const randGifKey = gifKeys[randGifIndex]
-        var selectGif = gifDatabase[randGifKey]
+        var randGifIndex = Math.floor(Math.random() * gifAmount)
+        var selectGif = gifDatabase[randGifIndex]
 
+        // Different cases for first argument for ?coconut
         switch(args[0]) {
-            case "help":
-                let helpArgEmbed = new Discord.MessageEmbed()
-                    .setColor('#1fdd94')
-                    .addFields(
-                        {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
-                    )
-                    .setTitle('Helpful Info for you!');
-                message.channel.send(helpArgEmbed);
-                break;
 
             case "image":
-                if(randKey == 69) {
+                if(randIndex == 69) {
                     let coconut69Image = new Discord.MessageEmbed()
                         .setColor('#1fdd94')
                         .setTitle("69th image, nice")
                         .setImage(`${selectImage}`);
                     message.channel.send(coconut69Image);
-                } else if(randKey != 69) {
+                } else if(randIndex != 69) {
                     let coconutImageEmbed = new Discord.MessageEmbed()
                         .setColor('#1fdd94')
                         .setTitle("Here's the image you requested nya~")
@@ -73,14 +55,18 @@ module.exports = {
                 break;
 
             case "nsfw":
-                message.channel.send("Coming soon!");
+                let nsfwEmbed = new Discord.MessageEmbed()
+                    .setColor('#1fdd94')
+                    .setTitle("BONK! Go to horny jail")
+                    .setImage('https://cdn.discordapp.com/attachments/870716191147163648/870722921889411163/iu.png');
+                message.channel.send(nsfwEmbed);
                 break;
 
             default:
                 let defaultEmbed = new Discord.MessageEmbed()
                     .setColor('#1fdd94')
                     .addFields(
-                        {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after the command to specify what you want!"}
+                        {name: "Here are some helpful tips!", value: "Use \"image\" or \"gif\" after ?coconut to specify what you want!\nUse nsfw for specifically nsfw images"}
                     )
                     .setTitle('Helpful Info for you!');
                 message.channel.send(defaultEmbed);
