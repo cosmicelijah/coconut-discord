@@ -3,24 +3,11 @@ const commandPing = require("./ping.js")
 const commandTime = require("./time.js")
 const commandCoconut = require('./coconut.js')
 const commandRepeat = require('./repeat.js')
-const docs = require("./docs.js")
-// const command_files = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-// const description = require(`./${file}`);
 
-// for(const file of command_files){
-//     const command = require(`../commands/${file}`);
-//     if(command.description){
-//         client.commands.set(command.description, command);
-//     }
-//     else {
-//         return;
-//     }
-    
-
-module.exports = { 
+module.exports = {
     name: 'help',
     description: "list of available commands",
-    execute(client, message, args, Discord){
+    execute(client, message, args, Discord) {
         let helpEmbed = new Discord.MessageEmbed()
             .setColor('#FAF0E6')
             .setAuthor('Helpful Coconut here,')
@@ -34,9 +21,8 @@ module.exports = {
                 {name: "Repeat", value: `${commandRepeat.description}`},
                 {name: "Docs", value: `${docs.description}`},
                 {name: "Coming soon!", value: "More features coming soon, so keep your eyes peeled!"}
-                
             )
-            .setThumbnail('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fm-anime.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F1%2Fimage%2F9df78eab33525d08d6e5fb8d27136e95%2FN%2Fe%2FNekopara_Coconut_Maid_Dress_1.jpg&f=1&nofb=1');
+            .setThumbnail('https://cdn.discordapp.com/attachments/870716191147163648/870751372302241872/iu.png');
         message.channel.send(helpEmbed);
     }
 }

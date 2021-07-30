@@ -2,13 +2,13 @@ const Discord = require('discord.js')
 const status = require('./data/status.json')
 const fs = require('fs')
 let prefix = '?'
-const client = new Discord.Client({disableEveryone: true});
+const client = new Discord.Client({ disableEveryone: true });
 
 client.login("ODcwNTc3NDkwOTExOTY5MzIw.YQOyeA.X3wNk2UHK0rjm-3RdhqXVdzN0wY");
 
 client.commands = new Discord.Collection();
 
-['command_handler'].forEach(handler =>{
+['command_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, Discord);
 });
 
@@ -24,13 +24,13 @@ client.once("ready", () => {
 });
 
 client.on("message", message => {
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd);
 
-    if(command) command.execute(client, message, args, Discord);
+    if (command) command.execute(client, message, args, Discord);
 });
 
 // To do

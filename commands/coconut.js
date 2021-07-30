@@ -14,23 +14,23 @@ module.exports = {
         
         // Image random integer generator
         var randIndex = Math.floor(Math.random() * imageAmount)
-        var selectImage = imageDatabase[randIndex]
+        var selectImage = imageDatabase[imageIndex]
 
         // Gif random integer generator
         var randGifIndex = Math.floor(Math.random() * gifAmount)
-        var selectGif = gifDatabase[randGifIndex]
+        var selectGif = gifDatabase[gifIndex]
 
         // Different cases for first argument for ?coconut
         switch(args[0]) {
 
             case "image":
-                if(randIndex == 69) {
+                if(imageIndex == 69) {
                     let coconut69Image = new Discord.MessageEmbed()
                         .setColor('#1fdd94')
                         .setTitle("69th image, nice")
                         .setImage(`${selectImage}`);
                     message.channel.send(coconut69Image);
-                } else if(randIndex != 69) {
+                } else if(imageIndex != 69) {
                     let coconutImageEmbed = new Discord.MessageEmbed()
                         .setColor('#1fdd94')
                         .setTitle("Here's the image you requested nya~")
