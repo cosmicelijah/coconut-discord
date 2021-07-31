@@ -33,10 +33,6 @@ client.on("message", message => {
     if (command) command.execute(client, message, args, Discord);
 });
 
-/*  To do
-    Add comments
-    Optimize shit so it aint so
-    Reddit image scraper for r/NEKOPARAGAME
-    More material for image and gif commands
-    Add an rng based mini game (not sure what game yet, but might be fun to add)
+/* Bot by CosmicElijah
+    Please refrain from copying this bot and using it as your own without credit
 */
