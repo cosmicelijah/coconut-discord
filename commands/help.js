@@ -3,6 +3,7 @@ const commandPing = require("./ping.js")
 const commandTime = require("./time.js")
 const commandCoconut = require('./coconut.js')
 const commandRepeat = require('./repeat.js')
+const docs = require("./docs.js")
 
 module.exports = {
     name: 'help',
