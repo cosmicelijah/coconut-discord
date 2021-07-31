@@ -1,10 +1,10 @@
 const Discord = require('discord.js')
-const status = require('/app/data/status.json')
+const status = require('./data/status.json')
 const fs = require('fs')
 let prefix = '?'
 const client = new Discord.Client({ disableEveryone: true });
 
-client.login(process.env.TOKEN);
+client.login("ODcwNTc3NDkwOTExOTY5MzIw.YQOyeA.X3wNk2UHK0rjm-3RdhqXVdzN0wY");
 
 client.commands = new Discord.Collection();
 
@@ -33,6 +33,26 @@ client.on("message", message => {
     if (command) command.execute(client, message, args, Discord);
 });
 
-/* Bot by CosmicElijah
+
+/* TODO
+Fix coconut.js no args (done)
+Add comments
+Prettyify code
+Optimize shit so it aint so
+Reddit image scraper for r/NEKOPARAGAME
+More material for image and gif commands
+
+Unnecessary as embeds aren't filtered {
+    Differentiate SFW and NSFW (or possibly minimally censor the nsfw to fit with sfw and create a seperate nsfw argument for uncensored)
+}
+
+In case you forget the commands
+    git commit -am "message"
+    git push -u origin "branch"
+    git switch "branch"
+    git merge origin "branch"
+
+    Bot by CosmicElijah
     Please refrain from copying this bot and using it as your own without credit
 */
+
