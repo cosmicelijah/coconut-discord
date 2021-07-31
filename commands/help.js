@@ -10,7 +10,6 @@ module.exports = {
     execute(client, message, args, Discord) {
         let helpEmbed = new Discord.MessageEmbed()
             .setColor('#FAF0E6')
-            .setAuthor('Helpful Coconut here,')
             .setTitle('List of commands')
             .addFields(
                 {name: "Prefix to activate me", value: 'Use a "?" to call me, but you already know that nya~'},

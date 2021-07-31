@@ -5,7 +5,6 @@ module.exports = {
         let pingEmbed = new Discord.MessageEmbed()
             .setColor('#bada55')
             .setTitle('Huh???')
-            .setAuthor('Confused Coconut here,')
             .addFields(
                 { name: "Wait?", value: "Did someone ping me?" }
             )
