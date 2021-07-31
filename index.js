@@ -33,14 +33,21 @@ client.on("message", message => {
     if (command) command.execute(client, message, args, Discord);
 });
 
-// To do
-// Fix coconut.js no args (done)
-// Add comments
-// Prettyify code
-// Optimize shit so it aint so
-// Reddit image scraper for r/NEKOPARAGAME
-// More material for image and gif commands
-// Differentiate SFW and NSFW (or possibly minimally censor the nsfw to fit with sfw and create a seperate nsfw argument for uncensored)
-//
-// git commit -am "message"
-// git push -u origin "branch"
+/* TODO
+Fix coconut.js no args (done)
+Add comments
+Prettyify code
+Optimize shit so it aint so
+Reddit image scraper for r/NEKOPARAGAME
+More material for image and gif commands
+
+Unnecessary as embeds aren't filtered {
+    Differentiate SFW and NSFW (or possibly minimally censor the nsfw to fit with sfw and create a seperate nsfw argument for uncensored)
+}
+
+In case you forget the commands
+    git commit -am "message"
+    git push -u origin "branch"
+    git switch "branch"
+    git merge origin "branch"
+*/
