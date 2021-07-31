@@ -13,11 +13,11 @@ module.exports = {
     execute(client, message, args, Discord){
         
         // Image random integer generator
-        var randIndex = Math.floor(Math.random() * imageAmount)
+        var imageIndex = Math.floor(Math.random() * imageAmount)
         var selectImage = imageDatabase[imageIndex]
 
         // Gif random integer generator
-        var randGifIndex = Math.floor(Math.random() * gifAmount)
+        var gifIndex = Math.floor(Math.random() * gifAmount)
         var selectGif = gifDatabase[gifIndex]
 
         // Different cases for first argument for ?coconut
