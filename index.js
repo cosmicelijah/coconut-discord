@@ -3,7 +3,6 @@ const status = require('./data/status.json')
 const fs = require('fs')
 let prefix = '?'
 const client = new Discord.Client({ disableEveryone: true });
-const token = require('./data/token.json');
 
 client.login(process.env.TOKEN);
 
