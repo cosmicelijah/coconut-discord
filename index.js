@@ -1,10 +1,11 @@
 const Discord = require('discord.js')
 const status = require('./data/status.json')
 const fs = require('fs')
-let prefix = '?'
+let prefix = '/'
+const botToken = require('./data/token.json')
 const client = new Discord.Client({ disableEveryone: true });
 
-client.login("ODcwNTc3NDkwOTExOTY5MzIw.YQOyeA.X3wNk2UHK0rjm-3RdhqXVdzN0wY");
+client.login(botToken.token);
 
 client.commands = new Discord.Collection();
 
@@ -40,10 +41,6 @@ Prettyify code
 Optimize shit so it aint so
 Reddit image scraper for r/NEKOPARAGAME
 More material for image and gif commands
-
-Unnecessary as embeds aren't filtered {
-    Differentiate SFW and NSFW (or possibly minimally censor the nsfw to fit with sfw and create a seperate nsfw argument for uncensored)
-}
 
 In case you forget the commands
     git commit -am "message"
