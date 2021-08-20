@@ -34,6 +34,7 @@ client.on("message", message => {
     if (command) command.execute(client, message, args, Discord);
 });
 
+
 /* TODO
 Fix coconut.js no args (done)
 Add comments
@@ -47,4 +48,8 @@ In case you forget the commands
     git push -u origin "branch"
     git switch "branch"
     git merge origin "branch"
+
+    Bot by CosmicElijah
+    Please refrain from copying this bot and using it as your own without credit
 */
+
