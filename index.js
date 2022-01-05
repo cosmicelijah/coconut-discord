@@ -5,14 +5,6 @@ let prefix = '?'
 let gayass = "sorry bud; "
 const client = new Discord.Client({ disableEveryone: true });
 
-const TOKEN = "ODAxNDM5MjI1MjY5NzE0OTc0.YAgscQ.9JsT-8Weodjd_v8hEDCYgPR9A60"
-
-if (process.env.TOKEN == "ODAxNDM5MjI1MjY5NzE0OTc0.YAgscQ.9JsT-8Weodjd_v8hEDCYgPR9A60") {
-    client.login(process.env.TOKEN);
-} else {
-    client.login(TOKEN);
-};
-
 client.commands = new Discord.Collection();
 
 ['command_handler'].forEach(handler => {
