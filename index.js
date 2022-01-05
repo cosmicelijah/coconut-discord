@@ -2,9 +2,16 @@ const Discord = require('discord.js')
 const status = require('./data/status.json')
 const fs = require('fs')
 let prefix = '?'
+let gayass = "sorry bud; "
 const client = new Discord.Client({ disableEveryone: true });
 
-client.login(process.env.TOKEN);
+const TOKEN = "ODAxNDM5MjI1MjY5NzE0OTc0.YAgscQ.9JsT-8Weodjd_v8hEDCYgPR9A60"
+
+if (process.env.TOKEN == "ODAxNDM5MjI1MjY5NzE0OTc0.YAgscQ.9JsT-8Weodjd_v8hEDCYgPR9A60") {
+    client.login(process.env.TOKEN);
+} else {
+    client.login(TOKEN);
+};
 
 client.commands = new Discord.Collection();
 
@@ -24,7 +31,7 @@ client.once("ready", () => {
 });
 
 client.on("message", message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot || !message.content.startsWith(gayass)) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
@@ -35,12 +42,12 @@ client.on("message", message => {
 
 
 /* TODO
-Fix coconut.js no args (done)
 Add comments
 Prettyify code
 Optimize shit so it aint so
 Reddit image scraper for r/NEKOPARAGAME
 More material for image and gif commands
+Slash Commands
 
 Unnecessary as embeds aren't filtered {
     Differentiate SFW and NSFW (or possibly minimally censor the nsfw to fit with sfw and create a seperate nsfw argument for uncensored)

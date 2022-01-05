@@ -3,6 +3,7 @@ const commandPing = require("./ping.js")
 const commandTime = require("./time.js")
 const commandCoconut = require('./coconut.js')
 const commandRepeat = require('./repeat.js')
+const numbers = require('./numbers.js')
 const docs = require("./docs.js")
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
                 {name: "Coconut", value: `${commandCoconut.description}`},
                 {name: "Repeat", value: `${commandRepeat.description}`},
                 {name: "Docs", value: `${docs.description}`},
+                {name: "Numbers", value: `${numbers.description}`},
                 {name: "Coming soon!", value: "More features coming soon, so keep your eyes peeled!"}
             )
             .setThumbnail('https://cdn.discordapp.com/attachments/870716191147163648/870751372302241872/iu.png');
